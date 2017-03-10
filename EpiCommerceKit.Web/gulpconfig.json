@@ -1,0 +1,86 @@
+﻿{
+  "bundles": [
+    {
+      //"enableVariables": false, // set to true if needing package manager compatibility for standard CSS variable replacements
+      //"outputDirectory": null, // allows custom output folder other than directories.release
+      "filename": "styles.css",
+      "resources": [
+        // add comma delimited strings of files to bundle
+        // "./temp/build/sass/style.css", // includes compiled sass file in bundle
+        // "./temp/build/mediaquery/*.css" // includes older package manager style
+      ]
+    },
+    {
+      "filename": "scripts.js",
+      "resources": [
+        "./core/components/jquery/dist/jquery.js"        
+      ]
+    },
+    {
+      "filename": "scripts.head.js",
+      "resources": [
+        "./core/js/lib/modernizr.js"
+      ]
+    }
+  ],
+  "directories": {
+    // uncomment if needing to copy assets to compiled folders
+    //"assets": [
+    //  {
+    //    "dest": "./core/release/images/",
+    //    "src": "./core/images/**/*.{jpg,svg}"
+    //  }
+    //],
+    "cleanCss": [ "./core/compiled/**/*.css" ],
+    "cleanJs": [ "./core/compiled/**/*.js" ],
+    "release": "./core/compiled/",
+    "temp": "./temp/build/",
+    "watch": [
+      {
+        "src": [ "core/js/**/*.js" ],
+        "tasks": [ "build:js" ]
+      },
+      {
+        "src": [ "core/css/**/*.css" ],
+        "tasks": [ "build:css" ]
+
+      }
+    ]
+  },
+  // uncomment and use for older package manager compatibility
+  //"packageManager": {
+  //  "cssBundles": [
+  //    {
+  //      "filename": "mediaquery/alpha.css",
+  //      "mediaQuery": "screen and (min-width: 560px)",
+  //      "resources": [
+  //        "./core/css/objects/alpha/*.css"
+  //      ]
+  //    },
+  //    {
+  //      "filename": "mediaquery/bravo.css",
+  //      "mediaQuery": "screen and (min-width: 768px)",
+  //      "resources": [
+  //        "./core/css/objects/bravo/*.css"
+  //      ]
+  //    },
+  //    {
+  //      "filename": "mediaquery/charlie.css",
+  //      "mediaQuery": "screen and (min-width: 992px)",
+  //      "resources": [
+  //        "./core/css/objects/charlie/*.css"
+  //      ]
+  //    }
+  //  ],
+  //  "variables": {
+  //    "$var-name": "value",      
+  //  }
+  //},
+  "sass": {
+    "filename": "sass/style.css",
+    "includePaths": [
+      "core/css/base/sass-includes/"
+    ],
+    "main": "./core/css/base/style.scss"
+  }
+}

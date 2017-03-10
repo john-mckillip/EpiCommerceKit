@@ -388,6 +388,8 @@
     <Content Include="Configs\ecf.security.config" />
     <Content Include="Configs\ecf.ssl.config" />
     <Content Include="Configs\Mediachase.Search.config" />
+    <None Include="bower.json" />
+    <None Include="gulpconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -396,7 +398,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="gulpfile.custom.js" />
+    <None Include="gulpfile.js" />
     <Content Include="Web.config" />
+    <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\InitializationModule.cs" />

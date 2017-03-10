@@ -1,0 +1,10 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "fancybox": "2.1.5",
+    "jquery": "2.2.0",
+    "modular-scale": "~2.1.1",
+    "normalize-css": "~4.0.0"
+  }
+}
