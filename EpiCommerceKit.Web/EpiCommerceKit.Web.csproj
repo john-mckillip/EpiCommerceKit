@@ -502,6 +502,19 @@
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Features\Product\Services\Interfaces\IProductService.cs" />
+    <Compile Include="Features\Product\Services\ProductService.cs" />
+    <Compile Include="Features\Product\ViewModels\ProductViewModel.cs" />
+    <Compile Include="Features\Shared\Extensions\AssetContainerExtensions.cs" />
+    <Compile Include="Features\Shared\Extensions\ContentExtensions.cs" />
+    <Compile Include="Features\Shared\Extensions\LineItemExtensions.cs" />
+    <Compile Include="Features\Shared\Extensions\ProductContentExtensions.cs" />
+    <Compile Include="Features\Shared\Extensions\UrlResolverExtensions.cs" />
+    <Compile Include="Features\Shared\Models\Interfaces\IProductModel.cs" />
+    <Compile Include="Features\Shared\Services\Interfaces\ICurrencyService.cs" />
+    <Compile Include="Features\Shared\Services\Interfaces\IPricingService.cs" />
+    <Compile Include="Features\Shared\Services\Interfaces\IPromotionService.cs" />
     <Compile Include="Infrastructure\Business\Extensions\SiteExtensions.cs" />
     <Compile Include="Infrastructure\Business\Helpers\SiteHelper.cs" />
     <Compile Include="Infrastructure\Business\Initialization\CommerceInitilization.cs" />
@@ -517,12 +530,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Features\Start\Blocks\SiteSettingsData.cs" />
-    <Compile Include="Features\Product\Abstracts\CoreItemData.cs" />
-    <Compile Include="Features\Product\Abstracts\CoreNodeData.cs" />
-    <Compile Include="Features\Product\Abstracts\CoreProductData.cs" />
-    <Compile Include="Features\Product\ProductCategoryData.cs" />
-    <Compile Include="Features\Product\ProductData.cs" />
-    <Compile Include="Features\Product\ProductItemData.cs" />
+    <Compile Include="Features\Product\Models\Abstracts\CoreItemData.cs" />
+    <Compile Include="Features\Product\Models\Abstracts\CoreNodeData.cs" />
+    <Compile Include="Features\Product\Models\Abstracts\CoreProductData.cs" />
+    <Compile Include="Features\Product\Models\ProductCategoryData.cs" />
+    <Compile Include="Features\Product\Models\ProductData.cs" />
+    <Compile Include="Features\Product\Models\ProductItemData.cs" />
     <Compile Include="Features\Media\CommerceImageFile.cs" />
     <Compile Include="Features\Media\GenericMediaData.cs" />
     <Compile Include="Features\Shared\Models\SeoData.cs" />
@@ -532,9 +545,12 @@
     <Compile Include="Features\Shared\ViewModels\Interfaces\IPageViewModel.cs" />
     <Compile Include="Features\Shared\ViewModels\LayoutModel.cs" />
     <Compile Include="Features\Shared\ViewModels\PageViewModel.cs" />
+    <Compile Include="Infrastructure\Facades\AppContextFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Features\Product\Controllers\" />
+    <Folder Include="Features\Product\ViewModels\Interfaces\" />
     <Folder Include="Features\Start\Extensions\" />
     <Folder Include="Features\Start\Models\" />
   </ItemGroup>

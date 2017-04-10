@@ -1,4 +1,4 @@
-﻿using EpiCommerceKit.Web.Features.Product;
+﻿using EpiCommerceKit.Web.Features.Product.Models;
 using EpiCommerceKit.Web.Features.Shared.Models;
 using EpiCommerceKit.Web.Features.Shared.ViewModels.Interfaces;
 using EpiCommerceKit.Web.Features.Start.Pages;

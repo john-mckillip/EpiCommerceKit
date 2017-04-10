@@ -1,61 +1,34 @@
 ﻿using EPiServer.Commerce.Catalog.ContentTypes;
 using EPiServer.Commerce.Catalog.DataAnnotations;
 using EPiServer.Core;
-using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EPiServer.Web;
 using Mediachase.Commerce.Catalog.Managers;
 using Mediachase.Commerce.Catalog.Objects;
 using Mediachase.Commerce.Pricing;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace EpiCommerceKit.Web.Features.Product.Abstracts
+namespace EpiCommerceKit.Web.Features.Product.Models.Abstracts
 {
     public abstract class CoreItemData : VariationContent
     {
         private Price _ListPrice;
-        
-        [Editable(false)]
-        [Display(
-           Name = "Manufacturer",
-           GroupName = SystemTabNames.Content,
-           Order = 21)]
-        public virtual string Manufacturer { get; set; }
-        
-        [CultureSpecific]
-        [Display(
-            Name = "Small Image",
-            GroupName = SystemTabNames.Content,
-            Order = 31)]
-        public virtual string ImageSmall { get; set; }
 
-        [CultureSpecific]
-        [Display(
-            Name = "Large Image",
-            GroupName = SystemTabNames.Content,
-            Order = 32)]
-        public virtual string ImageBig { get; set; }
-
+        [Searchable]
         [Tokenize]
+        [IncludeInDefaultSearch]
+        [BackingType(typeof(PropertyString))]
+        [Display(Name = "Size", Order = 1)]
+        public virtual string Size { get; set; }
+
         [Searchable]
         [CultureSpecific]
-        [Display(
-            Name = "Teaser",
-            GroupName = SystemTabNames.Content,
-            Order = 40)]
-        [UIHint(UIHint.Textarea)]
-        public virtual string Teaser { get; set; }
-
         [Tokenize]
-        [Searchable]
-        [CultureSpecific]
-        [Display(
-            Name = "Description",
-            GroupName = SystemTabNames.Content,
-            Order = 50)]
-        public virtual XhtmlString Description { get; set; }
-        
+        [IncludeInDefaultSearch]
+        [BackingType(typeof(PropertyString))]
+        [Display(Name = "Color", Order = 2)]
+        public virtual string Color { get; set; }
+
         [Ignore]
         public virtual Price ListPrice
         {

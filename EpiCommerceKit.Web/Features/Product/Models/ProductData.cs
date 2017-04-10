@@ -1,7 +1,7 @@
 ﻿using EPiServer.Commerce.Catalog.DataAnnotations;
-using EpiCommerceKit.Web.Features.Product.Abstracts;
+using EpiCommerceKit.Web.Features.Product.Models.Abstracts;
 
-namespace EpiCommerceKit.Web.Features.Product
+namespace EpiCommerceKit.Web.Features.Product.Models
 {
     [CatalogContentType(
         DisplayName = "Product", 

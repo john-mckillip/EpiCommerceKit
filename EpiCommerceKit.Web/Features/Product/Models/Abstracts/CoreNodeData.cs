@@ -5,7 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using System.ComponentModel.DataAnnotations;
 
-namespace EpiCommerceKit.Web.Features.Product.Abstracts
+namespace EpiCommerceKit.Web.Features.Product.Models.Abstracts
 {
     public abstract class CoreNodeData : NodeContent
     {
