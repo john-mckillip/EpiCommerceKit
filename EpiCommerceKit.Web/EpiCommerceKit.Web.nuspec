@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$id$ Deployment Package</title>
+    <authors>WSOL</authors>
+    <owners>Websolutions Technologies Inc.</owners>
+    <iconUrl>http://nuget.wsol.com/nuget.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Octopus release package</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>OctopusPackage</tags>
+  </metadata>
+  <files>
+    <!--<file src="WebsiteArtifacts\**\*.*" target="." />-->
+  </files>
+</package>
