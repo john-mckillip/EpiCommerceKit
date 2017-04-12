@@ -1,16 +1,17 @@
-﻿using EpiCommerceKit.Web.Features.Product.Models.Abstracts;
+﻿using EpiCommerceKit.Web.Features.Product.Models;
 using EpiCommerceKit.Web.Features.Product.ViewModels;
 using EPiServer.Commerce.Catalog.ContentTypes;
+using EPiServer.Core;
 using System.Collections.Generic;
 
 namespace EpiCommerceKit.Web.Features.Product.Services.Interfaces
 {
     public interface IProductService
     {
-        ProductViewModel GetProductViewModel(ProductContent product);
-        ProductViewModel GetProductViewModel(VariationContent variation);
+        ProductViewModel GetProductViewModel(EntryContentBase entry);
+        IEnumerable<ProductViewModel> GetProductViewModels(IEnumerable<ContentReference> entryLinks);
         string GetSiblingVariantCodeBySize(string siblingCode, string size);
-        IEnumerable<CoreItemData> GetVariations(CoreProductData currentContent);
-        IEnumerable<ProductViewModel> GetVariationsAndPricesForProducts(IEnumerable<ProductContent> products);
+        IEnumerable<ProductItemData> GetVariations(ProductData currentContent);
+        
     }
 }

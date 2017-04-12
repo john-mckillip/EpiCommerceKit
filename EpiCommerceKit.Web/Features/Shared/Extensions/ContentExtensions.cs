@@ -51,5 +51,31 @@ namespace EpiCommerceKit.Web.Features.Shared.Extensions
 
             return urlBuilder.ToString();
         }
+
+        public static string GetUrl(this EntryContentBase entry, ILinksRepository linksRepository, UrlResolver urlResolver)
+        {
+            var productLink = entry is VariationContent ?
+                entry.GetParentProducts(linksRepository).FirstOrDefault() :
+                entry.ContentLink;
+
+            if (productLink == null)
+            {
+                return string.Empty;
+            }
+
+            var urlBuilder = new UrlBuilder(urlResolver.GetUrl(productLink));
+
+            if (entry.Code != null)
+            {
+                urlBuilder.QueryCollection.Add("variationCode", entry.Code);
+            }
+
+            return urlBuilder.ToString();
+        }
+
+        public static string GetUrl(this EntryContentBase entry)
+        {
+            return GetUrl(entry, _linksRepository.Service, _urlResolver.Service);
+        }
     }
 }
